@@ -1,0 +1,12 @@
+{% extends 'main/main.html' %}
+{% block content %}
+    <h3>Login Page</h3>
+    <form action="" method="post">
+    {% csrf_token %}
+        <lable>Username:</lable>
+        <input class="form-control w-25" type="text" name="username">
+        <lable>Password:</lable>
+        <input class="form-control w-25 mb-2" type="password" name="password">
+        <button type="submit" class="btn btn-danger text-black">Login</button>
+    </form>
+{%  endblock %}

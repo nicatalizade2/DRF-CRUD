@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    restart: always
+#    volumes:
+#      - .:/appdjango
+    ports:
+      - 8000:8000
+    image: app
+    container_name: django_container_test
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+  db:
+    image: postgres
+    ports:
+      - 5790:5790
+#    volumes:
+#      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=railway
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=i1mwJvKaYsprO55Hvx76
+    container_name: postgres_nicat
+
+
